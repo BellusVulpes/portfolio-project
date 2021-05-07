@@ -7,7 +7,7 @@ const getAllMonsters = (request, response) => {
 const getMonsterById = (request, response) => {
   const { id } = request.params
 
-  const matchingMonsters = monsters.find((team) => team.id === parseInt(id))
+  const matchingMonsters = monsters.find((monster) => monster.id === parseInt(id))
 
   return matchingMonsters
     ? response.send(matchingMonsters)
