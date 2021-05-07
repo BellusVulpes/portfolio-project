@@ -1,10 +1,16 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const movies = require('./movies.js')
+const { getAllMonsters, getMonsterById, saveNewMonster } = require('./controllers/teams')
 
 app.use(bodyParser.json())
 
 const app = express()
+
+app.get('/', getAllMonsters)
+
+app.get('/:id', getMonsterById)
+
+app.post('/', bodyParser.json(), saveNewMonster)
 
 app.all('*'), (request, response) => {
   return request.sendStatus(404)
