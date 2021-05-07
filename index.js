@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const { getAllMonsters, getMonsterById, saveNewMonster } = require('./controllers/teams')
+const { getAllMonsters, getMonsterById, saveNewMonster } = require('./controller/monsters')
 
 app.use(bodyParser.json())
 
