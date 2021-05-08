@@ -1,8 +1,17 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { getAllMonsters, getMonsterById, monsterData, saveNewMonster } = require('./controller/monsters')
+// const monsters = require('./monsters')
 
 const app = express()
+
+// app.set('view engine', 'pug')
+
+// app.use(express.static('public'))
+
+// app.get('/', (request, response) => {
+//   response.render('index', { monsters })
+// })
 
 app.get('/', getAllMonsters)
 

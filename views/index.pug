@@ -2,3 +2,6 @@ html
   body 
     h1 Monster Classifications
   div
+    for monster in monsters
+       a(href=`/monsters/:monsterData/${monster.classification}`)= monster.classification
+       div 
