@@ -14,6 +14,15 @@ const getMonsterById = (request, response) => {
     : response.sendStatus(404)
 }
 
+const monsterData = (request, response) => {
+  const { monsterData } = request.params
+
+  const findMonster = monsters.filter((monster) => monster.classification.toLowerCase().includes(monsterData) ||
+    monster.elements.toString().toLowerCase().includes(monsterData))
+
+  return response.send(findMonster)
+}
+
 const getNextId = () => {
   const lastId = monsters.reduce((acc, monster) => {
     return monster.id > acc ? monster.id : acc
@@ -42,4 +51,4 @@ const saveNewMonster = (request, response) => {
   return response.status(201).send(newMonster)
 }
 
-module.exports = { getAllMonsters, getMonsterById, saveNewMonster }
+module.exports = { getAllMonsters, getMonsterById, monsterData, saveNewMonster }

@@ -1,14 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const { getAllMonsters, getMonsterById, saveNewMonster } = require('./controller/monsters')
-
-app.use(bodyParser.json())
+const { getAllMonsters, getMonsterById, monsterData, saveNewMonster } = require('./controller/monsters')
 
 const app = express()
 
 app.get('/', getAllMonsters)
 
 app.get('/:id', getMonsterById)
+
+app.get('/monsters/:monsterData', monsterData)
 
 app.post('/', bodyParser.json(), saveNewMonster)
 
