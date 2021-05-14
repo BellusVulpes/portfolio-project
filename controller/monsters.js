@@ -17,10 +17,10 @@ const getMonsterById = (request, response) => {
 const monsterData = (request, response) => {
   const { monsterData } = request.params
 
-  const findMonster = monsters.filter((monster) => monster.classification.toLowerCase().includes(monsterData) ||
+  const findMonster = monsters.filter((monster) => monster.classificationSlug.toLowerCase().includes(monsterData) ||
     monster.elements.toString().toLowerCase().includes(monsterData))
 
-  return response.send(findMonster)
+  return response.render('classification', { findMonster })
 }
 
 const getNextId = () => {

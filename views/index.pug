@@ -3,5 +3,5 @@ html
     h1 Monster Classifications
   div
     for monster in monsters
-       a(href=`/monsters/:monsterData/${monster.classification}`)= monster.classification
+       a(href=`/monsters/${monster.classificationSlug}`)= monster.classification
        div 
