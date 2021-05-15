@@ -1,10 +1,17 @@
 html 
-  h1 
+  include partials/head.pug
   body 
     for monster in findMonster
       img(src=`${ monster.image }`)
-      h1=monster.name
-      h2=monster.classification 
-      h2=monster.elements 
-      h2=monster.habitat
-      h2=monster.generation
+      h2 ID 
+        h3=monster.id
+      h2 Name
+        h3=monster.name
+      h2 Classification
+        h3=monster.classification 
+      h2 Elements
+        h3=monster.elements 
+      h2 Habitat
+        h3=monster.habitat
+      h2 Generation
+        h3=monster.generation
