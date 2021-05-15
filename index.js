@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const { getAllMonsters, getMonsterById, monsterData, saveNewMonster } = require('./controller/monsters')
+const { getAllMonsters, getMonsterById, monsterClassification, saveNewMonster } = require('./controller/monsters')
 const monsters = require('./monsters')
 
 const app = express()
@@ -17,9 +17,9 @@ app.get('/', (request, response) => {
 
 app.get('/:id', getMonsterById)
 
-app.get('/monsters/:monsterData', monsterData)
+app.get('/monsters/:monsterClassification', monsterClassification)
 
-// app.post('/', bodyParser.json(), saveNewMonster)
+// app.post('/monsters/:monsterClassification', bodyParser.json(), saveNewMonster)
 
 app.all('*'), (request, response) => {
   return request.sendStatus(404)

@@ -14,11 +14,10 @@ const getMonsterById = (request, response) => {
     : response.sendStatus(404)
 }
 
-const monsterData = (request, response) => {
-  const { monsterData } = request.params
+const monsterClassification = (request, response) => {
+  const { monsterClassification } = request.params
 
-  const findMonster = monsters.filter((monster) => monster.classificationSlug.toLowerCase().includes(monsterData) ||
-    monster.elements.toString().toLowerCase().includes(monsterData))
+  const findMonster = monsters.filter((monster) => monster.classificationSlug.toLowerCase().includes(monsterClassification))
 
   return response.render('classification', { findMonster })
 }
@@ -51,4 +50,4 @@ const saveNewMonster = (request, response) => {
   return response.status(201).send(newMonster)
 }
 
-module.exports = { getAllMonsters, getMonsterById, monsterData, saveNewMonster }
+module.exports = { getAllMonsters, getMonsterById, monsterClassification, saveNewMonster }

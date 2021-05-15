@@ -5,4 +5,5 @@ html
     for monster in monsters
        a(href=`/monsters/${monster.classificationSlug}`)= monster.classification
        div 
-  
+  div 
+    include apidocs.pug
