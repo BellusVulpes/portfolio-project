@@ -1,0 +1,10 @@
+html 
+  include partials/head.pug
+  body 
+    h1 Monster Classifications
+  div
+    for monster in monsters
+       a(href=`/monsters/${monster.classificationSlug}`)= monster.classification
+       div 
+  div 
+    include apidocs.pug

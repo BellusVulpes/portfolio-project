@@ -1,0 +1,47 @@
+html 
+  header 
+    title Monster API Documents
+    include partials/head.pug
+  body 
+    div(class= "header")
+      h1 Monster API Documents 
+    div(class= "docs")
+      h2 GET /
+      p returns all classifications as links
+      h3 Example 
+      p Response 
+        p Bird Wyvern 
+        p Leviathan 
+        p Brute Wyvern 
+        p Fanged Beast 
+        p Flying Wyvern
+      h2 GET /monsters/:monsterClassification
+      p returns all monsters with same classification
+      h3 Example 
+      p Reponse 
+        p {
+        p   id: '1',
+        p   classification: 'Bird Wyvern',
+        p   classificationSlug: 'bird-wyvern',
+        p   image: 'https://ik.imagekit.io/0xnsagmlp/articles-images/monster-hunter-rise/aknosom-icon_L3nU309HF.png',
+        p   name: 'Aknosom',
+        p   nameSlug: 'aknosom',
+        p   elements: 'Fire',
+        p   habitat: 'Shrine Ruins, Frost Islands, Red Stronghold',
+        p   generation: 'Fifth'
+        p }
+      h2 Post /monsters/:monsterClassification
+      p returns a new monster added to the list
+      h3 Example 
+      p Reponse 
+        p {
+        p   id: '6',
+        p   classification: 'Bird Wyvern',
+        p   classificationSlug: 'bird-wyvern',
+        p   image: 'https://monsterhunterrise.wiki.fextralife.com/file/Monster-Hunter-Rise/kulu-ya-ku_large_monster_monster_hunter_rise_200_200px.png',
+        p   name: 'Kulu-Ya-Ku',
+        p   nameSlug: 'kulu-ya-ku',
+        p   elements: 'None',
+        p   habitat: 'Shrine Ruins, Flooded Forest, Sandy Plains, Lava Caverns',
+        p   generation: 'Fifth'
+        p }
